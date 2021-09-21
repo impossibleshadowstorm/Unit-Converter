@@ -687,7 +687,14 @@ namespace Unique_Converter
 
         private void AreaConvertBtn_Click(object sender, EventArgs e)
         {
-
+            f(FromLengthComboBox.SelectedItem == null || ToLengthComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Please Select The Units To Convert....");
+            }
+            else if (LengthTextBox.TextLength == 0)
+            {
+                MessageBox.Show("Please Enter The Length....");
+            }
         }
     }
     
