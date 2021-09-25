@@ -23,6 +23,7 @@ namespace Unique_Converter
             TemperaturePanel.Visible = false;
             AreaPanel.Visible = false;
             TimePanel.Visible = false;
+            PlaneAnglePanel.Visible = false;
         }
 
         // Close Application Button Function
@@ -53,6 +54,7 @@ namespace Unique_Converter
             TemperaturePanel.Visible = true;
             AreaPanel.Visible = false;
             TimePanel.Visible = false;
+            PlaneAnglePanel.Visible = false;
         }
         private void lengthToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -60,6 +62,7 @@ namespace Unique_Converter
             TemperaturePanel.Visible = false;
             AreaPanel.Visible = false;
             TimePanel.Visible = false;
+            PlaneAnglePanel.Visible = false;
         }
 
         private void areaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,6 +71,7 @@ namespace Unique_Converter
             TemperaturePanel.Visible = false;
             AreaPanel.Visible = true;
             TimePanel.Visible = false;
+            PlaneAnglePanel.Visible = false;
         }
         private void timeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -75,6 +79,15 @@ namespace Unique_Converter
             TemperaturePanel.Visible = false;
             AreaPanel.Visible = false;
             TimePanel.Visible = true;
+            PlaneAnglePanel.Visible = false;
+        }
+        private void planeAngleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LengthPanel.Visible = false;
+            TemperaturePanel.Visible = false;
+            AreaPanel.Visible = false;
+            TimePanel.Visible = false;
+            PlaneAnglePanel.Visible = true;
         }
 
         // Convert Function
@@ -624,7 +637,7 @@ namespace Unique_Converter
             }
             else if (TemperatureTextBox.TextLength == 0)
             {
-                MessageBox.Show("Please Enter The Length....");
+                MessageBox.Show("Please Enter The Temperature....");
             }
             else if (!double.TryParse(TemperatureTextBox.Text, out temperature))
             {
@@ -761,7 +774,7 @@ namespace Unique_Converter
             }
             else if (AreaTextBox.TextLength == 0)
             {
-                MessageBox.Show("Please Enter The Length....");
+                MessageBox.Show("Please Enter The Area....");
             }
             else if (!double.TryParse(AreaTextBox.Text, out area))
             {
@@ -1063,7 +1076,7 @@ namespace Unique_Converter
             }
             else if (TimeTextBox.TextLength == 0)
             {
-                MessageBox.Show("Please Enter The Length....");
+                MessageBox.Show("Please Enter The Time....");
             }
             else if (!double.TryParse(TimeTextBox.Text, out time))
             {
@@ -1687,6 +1700,191 @@ namespace Unique_Converter
                 TimeResultTextBox.Text = Convert.ToString(time) + "  " + Convert.ToString(FromTimeComboBox.SelectedItem) + "  =  " + Convert.ToString(time * 10) + "  " + Convert.ToString(ToTimeComboBox.SelectedItem);
             }
         }
+        private void PlaneAngleConvertBtn_Click(object sender, EventArgs e)
+        {
+            double angle = 0.0;
+            double pi = System.Math.PI;
+
+            if (FromPlaneAngleComboBox.SelectedItem == null || ToPlaneAngleComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Please Select The Units To Convert....");
+            }
+            else if (PlaneAngleTextBox.TextLength == 0)
+            {
+                MessageBox.Show("Please Enter The Angle....");
+            }
+            else if (!double.TryParse(PlaneAngleTextBox.Text, out angle))
+            {
+                MessageBox.Show("This is a number only field");
+                return;
+            }
+
+            // Same Unit
+
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Degree" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Degree")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Gradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Gradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Milliradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Milliradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Minute Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Minute Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Radian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Radian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Second Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Second Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            
+            // Degree
+            
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Degree" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Gradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 200 / 180) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Degree" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Milliradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * (1000 * pi) / 180) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Degree" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Minute Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 60) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Degree" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Radian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * pi / 180) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Degree" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Second Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 3600) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            
+            // Gradian
+
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Gradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Degree")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 180 / 200) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Gradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Milliradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * (1000 * pi) / 200) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Gradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Minute Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 54) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Gradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Radian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * pi / 200) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Gradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Second Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 3240) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            
+            // Milliradian
+            
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Milliradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Degree")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 180 / (1000 * pi)) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Milliradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Gradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 200 / (1000 * pi)) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Milliradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Minute Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * (60 * 180) / (1000 * pi)) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Milliradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Radian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle / 1000) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Milliradian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Second Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * (3600 * 180) / (1000 * pi)) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            
+            // Minute Of Arc
+            
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Minute Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Degree")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle / 60) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Minute Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Gradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle / 54) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Minute Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Milliradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * (1000 * pi) / (60 * 180)) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Minute Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Radian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * pi / (60 * 180)) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Minute Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Second Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 60) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            
+            // Radian
+
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Radian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Degree")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 180 / pi) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Radian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Gradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 200 / pi) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Radian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Milliradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * 1000) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Radian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Minute Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * (60 * 180) / pi) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Radian" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Second Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * (3600 * 180) / pi) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            
+            // Second Of Arc
+
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Second Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Degree")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle / 3600) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Second Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Gradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle / 3240) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Second Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Milliradian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * (1000 * pi) / (180 * 3600)) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Second Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Minute Of Arc")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle / 60) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+            else if (Convert.ToString(FromPlaneAngleComboBox.SelectedItem) == "Second Of Arc" && Convert.ToString(ToPlaneAngleComboBox.SelectedItem) == "Radian")
+            {
+                PlaneAngleResultTextBox.Text = Convert.ToString(angle) + "  " + Convert.ToString(FromPlaneAngleComboBox.SelectedItem) + "  =  " + Convert.ToString(angle * pi / (180 * 3600)) + "  " + Convert.ToString(ToPlaneAngleComboBox.SelectedItem);
+            }
+        }
     }
     
 }
+      
