@@ -34,6 +34,7 @@ namespace Unique_Converter
             System.Windows.Forms.Label AreaConversion;
             System.Windows.Forms.Label TimeConversion;
             System.Windows.Forms.Label PlaneAngleConversion;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UniqueConverter));
             this.TopPanel = new System.Windows.Forms.Panel();
             this.AppName = new System.Windows.Forms.Label();
             this.AppCloseBtn = new System.Windows.Forms.Button();
@@ -143,6 +144,20 @@ namespace Unique_Converter
             TimeConversion.TabIndex = 8;
             TimeConversion.Text = "Time Converter";
             // 
+            // PlaneAngleConversion
+            // 
+            PlaneAngleConversion.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            PlaneAngleConversion.AutoSize = true;
+            PlaneAngleConversion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            PlaneAngleConversion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            PlaneAngleConversion.Font = new System.Drawing.Font("Monotype Corsiva", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            PlaneAngleConversion.ForeColor = System.Drawing.Color.Black;
+            PlaneAngleConversion.Location = new System.Drawing.Point(296, 58);
+            PlaneAngleConversion.Name = "PlaneAngleConversion";
+            PlaneAngleConversion.Size = new System.Drawing.Size(279, 39);
+            PlaneAngleConversion.TabIndex = 14;
+            PlaneAngleConversion.Text = "Plane Angle Converter";
+            // 
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -197,7 +212,7 @@ namespace Unique_Converter
             this.planeAngleToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 50);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(877, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(877, 36);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -246,9 +261,9 @@ namespace Unique_Converter
             this.LengthPanel.Controls.Add(this.FromLengthComboBox);
             this.LengthPanel.Controls.Add(LengthConversion);
             this.LengthPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LengthPanel.Location = new System.Drawing.Point(0, 83);
+            this.LengthPanel.Location = new System.Drawing.Point(0, 86);
             this.LengthPanel.Name = "LengthPanel";
-            this.LengthPanel.Size = new System.Drawing.Size(877, 445);
+            this.LengthPanel.Size = new System.Drawing.Size(877, 442);
             this.LengthPanel.TabIndex = 2;
             // 
             // LengthConvertBtn
@@ -257,7 +272,7 @@ namespace Unique_Converter
             this.LengthConvertBtn.BackColor = System.Drawing.Color.Black;
             this.LengthConvertBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LengthConvertBtn.ForeColor = System.Drawing.Color.White;
-            this.LengthConvertBtn.Location = new System.Drawing.Point(335, 305);
+            this.LengthConvertBtn.Location = new System.Drawing.Point(335, 304);
             this.LengthConvertBtn.Name = "LengthConvertBtn";
             this.LengthConvertBtn.Size = new System.Drawing.Size(192, 62);
             this.LengthConvertBtn.TabIndex = 6;
@@ -269,7 +284,7 @@ namespace Unique_Converter
             // 
             this.LengthResultTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LengthResultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LengthResultTextBox.Location = new System.Drawing.Point(142, 235);
+            this.LengthResultTextBox.Location = new System.Drawing.Point(142, 234);
             this.LengthResultTextBox.Name = "LengthResultTextBox";
             this.LengthResultTextBox.ReadOnly = true;
             this.LengthResultTextBox.Size = new System.Drawing.Size(584, 37);
@@ -281,7 +296,7 @@ namespace Unique_Converter
             this.LengthTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LengthTextBox.BackColor = System.Drawing.Color.White;
             this.LengthTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LengthTextBox.Location = new System.Drawing.Point(322, 175);
+            this.LengthTextBox.Location = new System.Drawing.Point(322, 174);
             this.LengthTextBox.Name = "LengthTextBox";
             this.LengthTextBox.Size = new System.Drawing.Size(221, 32);
             this.LengthTextBox.TabIndex = 3;
@@ -308,7 +323,7 @@ namespace Unique_Converter
             "Foot",
             "Inch",
             "Nautical Mile"});
-            this.ToLengthComboBox.Location = new System.Drawing.Point(502, 105);
+            this.ToLengthComboBox.Location = new System.Drawing.Point(502, 104);
             this.ToLengthComboBox.Name = "ToLengthComboBox";
             this.ToLengthComboBox.Size = new System.Drawing.Size(186, 34);
             this.ToLengthComboBox.TabIndex = 2;
@@ -334,7 +349,7 @@ namespace Unique_Converter
             "Foot",
             "Inch",
             "Nautical Mile"});
-            this.FromLengthComboBox.Location = new System.Drawing.Point(179, 105);
+            this.FromLengthComboBox.Location = new System.Drawing.Point(179, 104);
             this.FromLengthComboBox.Name = "FromLengthComboBox";
             this.FromLengthComboBox.Size = new System.Drawing.Size(186, 34);
             this.FromLengthComboBox.TabIndex = 1;
@@ -349,9 +364,9 @@ namespace Unique_Converter
             this.TemperaturePanel.Controls.Add(this.FromTemperatureComboBox);
             this.TemperaturePanel.Controls.Add(TemperatureConversion);
             this.TemperaturePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TemperaturePanel.Location = new System.Drawing.Point(0, 83);
+            this.TemperaturePanel.Location = new System.Drawing.Point(0, 86);
             this.TemperaturePanel.Name = "TemperaturePanel";
-            this.TemperaturePanel.Size = new System.Drawing.Size(877, 445);
+            this.TemperaturePanel.Size = new System.Drawing.Size(877, 442);
             this.TemperaturePanel.TabIndex = 7;
             // 
             // TemperatureConvertBtn
@@ -360,7 +375,7 @@ namespace Unique_Converter
             this.TemperatureConvertBtn.BackColor = System.Drawing.Color.Black;
             this.TemperatureConvertBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TemperatureConvertBtn.ForeColor = System.Drawing.Color.White;
-            this.TemperatureConvertBtn.Location = new System.Drawing.Point(337, 320);
+            this.TemperatureConvertBtn.Location = new System.Drawing.Point(337, 319);
             this.TemperatureConvertBtn.Name = "TemperatureConvertBtn";
             this.TemperatureConvertBtn.Size = new System.Drawing.Size(192, 62);
             this.TemperatureConvertBtn.TabIndex = 12;
@@ -372,7 +387,7 @@ namespace Unique_Converter
             // 
             this.TemperatureResultTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TemperatureResultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TemperatureResultTextBox.Location = new System.Drawing.Point(144, 250);
+            this.TemperatureResultTextBox.Location = new System.Drawing.Point(144, 249);
             this.TemperatureResultTextBox.Name = "TemperatureResultTextBox";
             this.TemperatureResultTextBox.ReadOnly = true;
             this.TemperatureResultTextBox.Size = new System.Drawing.Size(584, 37);
@@ -384,7 +399,7 @@ namespace Unique_Converter
             this.TemperatureTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TemperatureTextBox.BackColor = System.Drawing.Color.White;
             this.TemperatureTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TemperatureTextBox.Location = new System.Drawing.Point(324, 190);
+            this.TemperatureTextBox.Location = new System.Drawing.Point(324, 189);
             this.TemperatureTextBox.Name = "TemperatureTextBox";
             this.TemperatureTextBox.Size = new System.Drawing.Size(221, 32);
             this.TemperatureTextBox.TabIndex = 11;
@@ -406,7 +421,7 @@ namespace Unique_Converter
             "Rankine",
             "Reaumur",
             "Triple Point Of Water"});
-            this.ToTemperatureComboBox.Location = new System.Drawing.Point(504, 120);
+            this.ToTemperatureComboBox.Location = new System.Drawing.Point(504, 119);
             this.ToTemperatureComboBox.Name = "ToTemperatureComboBox";
             this.ToTemperatureComboBox.Size = new System.Drawing.Size(186, 34);
             this.ToTemperatureComboBox.TabIndex = 10;
@@ -427,7 +442,7 @@ namespace Unique_Converter
             "Rankine",
             "Reaumur",
             "Triple Point Of Water"});
-            this.FromTemperatureComboBox.Location = new System.Drawing.Point(181, 120);
+            this.FromTemperatureComboBox.Location = new System.Drawing.Point(181, 119);
             this.FromTemperatureComboBox.Name = "FromTemperatureComboBox";
             this.FromTemperatureComboBox.Size = new System.Drawing.Size(186, 34);
             this.FromTemperatureComboBox.TabIndex = 9;
@@ -442,9 +457,9 @@ namespace Unique_Converter
             this.AreaPanel.Controls.Add(this.FromAreaComboBox);
             this.AreaPanel.Controls.Add(AreaConversion);
             this.AreaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AreaPanel.Location = new System.Drawing.Point(0, 83);
+            this.AreaPanel.Location = new System.Drawing.Point(0, 86);
             this.AreaPanel.Name = "AreaPanel";
-            this.AreaPanel.Size = new System.Drawing.Size(877, 445);
+            this.AreaPanel.Size = new System.Drawing.Size(877, 442);
             this.AreaPanel.TabIndex = 3;
             // 
             // AreaConvertBtn
@@ -453,7 +468,7 @@ namespace Unique_Converter
             this.AreaConvertBtn.BackColor = System.Drawing.Color.Black;
             this.AreaConvertBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AreaConvertBtn.ForeColor = System.Drawing.Color.White;
-            this.AreaConvertBtn.Location = new System.Drawing.Point(335, 306);
+            this.AreaConvertBtn.Location = new System.Drawing.Point(335, 305);
             this.AreaConvertBtn.Name = "AreaConvertBtn";
             this.AreaConvertBtn.Size = new System.Drawing.Size(192, 62);
             this.AreaConvertBtn.TabIndex = 6;
@@ -465,7 +480,7 @@ namespace Unique_Converter
             // 
             this.AreaResultTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AreaResultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AreaResultTextBox.Location = new System.Drawing.Point(142, 236);
+            this.AreaResultTextBox.Location = new System.Drawing.Point(142, 235);
             this.AreaResultTextBox.Name = "AreaResultTextBox";
             this.AreaResultTextBox.ReadOnly = true;
             this.AreaResultTextBox.Size = new System.Drawing.Size(584, 37);
@@ -477,7 +492,7 @@ namespace Unique_Converter
             this.AreaTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AreaTextBox.BackColor = System.Drawing.Color.White;
             this.AreaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AreaTextBox.Location = new System.Drawing.Point(322, 176);
+            this.AreaTextBox.Location = new System.Drawing.Point(322, 175);
             this.AreaTextBox.Name = "AreaTextBox";
             this.AreaTextBox.Size = new System.Drawing.Size(221, 32);
             this.AreaTextBox.TabIndex = 3;
@@ -501,7 +516,7 @@ namespace Unique_Converter
             "Square Inch",
             "Hectare",
             "Acre"});
-            this.ToAreaComboBox.Location = new System.Drawing.Point(502, 106);
+            this.ToAreaComboBox.Location = new System.Drawing.Point(502, 105);
             this.ToAreaComboBox.Name = "ToAreaComboBox";
             this.ToAreaComboBox.Size = new System.Drawing.Size(186, 34);
             this.ToAreaComboBox.TabIndex = 2;
@@ -524,7 +539,7 @@ namespace Unique_Converter
             "Square Inch",
             "Hectare",
             "Acre"});
-            this.FromAreaComboBox.Location = new System.Drawing.Point(179, 106);
+            this.FromAreaComboBox.Location = new System.Drawing.Point(179, 105);
             this.FromAreaComboBox.Name = "FromAreaComboBox";
             this.FromAreaComboBox.Size = new System.Drawing.Size(186, 34);
             this.FromAreaComboBox.TabIndex = 1;
@@ -538,9 +553,9 @@ namespace Unique_Converter
             this.TimePanel.Controls.Add(this.FromTimeComboBox);
             this.TimePanel.Controls.Add(TimeConversion);
             this.TimePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TimePanel.Location = new System.Drawing.Point(0, 83);
+            this.TimePanel.Location = new System.Drawing.Point(0, 86);
             this.TimePanel.Name = "TimePanel";
-            this.TimePanel.Size = new System.Drawing.Size(877, 445);
+            this.TimePanel.Size = new System.Drawing.Size(877, 442);
             this.TimePanel.TabIndex = 7;
             // 
             // TimeConvertBtn
@@ -549,7 +564,7 @@ namespace Unique_Converter
             this.TimeConvertBtn.BackColor = System.Drawing.Color.Black;
             this.TimeConvertBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeConvertBtn.ForeColor = System.Drawing.Color.White;
-            this.TimeConvertBtn.Location = new System.Drawing.Point(339, 323);
+            this.TimeConvertBtn.Location = new System.Drawing.Point(339, 322);
             this.TimeConvertBtn.Name = "TimeConvertBtn";
             this.TimeConvertBtn.Size = new System.Drawing.Size(192, 62);
             this.TimeConvertBtn.TabIndex = 12;
@@ -561,7 +576,7 @@ namespace Unique_Converter
             // 
             this.TimeResultTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TimeResultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeResultTextBox.Location = new System.Drawing.Point(146, 253);
+            this.TimeResultTextBox.Location = new System.Drawing.Point(146, 252);
             this.TimeResultTextBox.Name = "TimeResultTextBox";
             this.TimeResultTextBox.ReadOnly = true;
             this.TimeResultTextBox.Size = new System.Drawing.Size(584, 37);
@@ -573,7 +588,7 @@ namespace Unique_Converter
             this.TimeTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TimeTextBox.BackColor = System.Drawing.Color.White;
             this.TimeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeTextBox.Location = new System.Drawing.Point(326, 193);
+            this.TimeTextBox.Location = new System.Drawing.Point(326, 192);
             this.TimeTextBox.Name = "TimeTextBox";
             this.TimeTextBox.Size = new System.Drawing.Size(221, 32);
             this.TimeTextBox.TabIndex = 11;
@@ -601,7 +616,7 @@ namespace Unique_Converter
             "Calendar Year",
             "Decade",
             "Century"});
-            this.ToTimeComboBox.Location = new System.Drawing.Point(506, 123);
+            this.ToTimeComboBox.Location = new System.Drawing.Point(506, 122);
             this.ToTimeComboBox.Name = "ToTimeComboBox";
             this.ToTimeComboBox.Size = new System.Drawing.Size(186, 34);
             this.ToTimeComboBox.TabIndex = 10;
@@ -628,7 +643,7 @@ namespace Unique_Converter
             "Calendar Year",
             "Decade",
             "Century"});
-            this.FromTimeComboBox.Location = new System.Drawing.Point(183, 123);
+            this.FromTimeComboBox.Location = new System.Drawing.Point(183, 122);
             this.FromTimeComboBox.Name = "FromTimeComboBox";
             this.FromTimeComboBox.Size = new System.Drawing.Size(186, 34);
             this.FromTimeComboBox.TabIndex = 9;
@@ -642,9 +657,9 @@ namespace Unique_Converter
             this.PlaneAnglePanel.Controls.Add(this.FromPlaneAngleComboBox);
             this.PlaneAnglePanel.Controls.Add(PlaneAngleConversion);
             this.PlaneAnglePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlaneAnglePanel.Location = new System.Drawing.Point(0, 83);
+            this.PlaneAnglePanel.Location = new System.Drawing.Point(0, 86);
             this.PlaneAnglePanel.Name = "PlaneAnglePanel";
-            this.PlaneAnglePanel.Size = new System.Drawing.Size(877, 445);
+            this.PlaneAnglePanel.Size = new System.Drawing.Size(877, 442);
             this.PlaneAnglePanel.TabIndex = 13;
             // 
             // PlaneAngleConvertBtn
@@ -653,7 +668,7 @@ namespace Unique_Converter
             this.PlaneAngleConvertBtn.BackColor = System.Drawing.Color.Black;
             this.PlaneAngleConvertBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlaneAngleConvertBtn.ForeColor = System.Drawing.Color.White;
-            this.PlaneAngleConvertBtn.Location = new System.Drawing.Point(339, 325);
+            this.PlaneAngleConvertBtn.Location = new System.Drawing.Point(339, 324);
             this.PlaneAngleConvertBtn.Name = "PlaneAngleConvertBtn";
             this.PlaneAngleConvertBtn.Size = new System.Drawing.Size(192, 62);
             this.PlaneAngleConvertBtn.TabIndex = 18;
@@ -665,7 +680,7 @@ namespace Unique_Converter
             // 
             this.PlaneAngleResultTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PlaneAngleResultTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlaneAngleResultTextBox.Location = new System.Drawing.Point(146, 255);
+            this.PlaneAngleResultTextBox.Location = new System.Drawing.Point(146, 254);
             this.PlaneAngleResultTextBox.Name = "PlaneAngleResultTextBox";
             this.PlaneAngleResultTextBox.ReadOnly = true;
             this.PlaneAngleResultTextBox.Size = new System.Drawing.Size(584, 37);
@@ -677,7 +692,7 @@ namespace Unique_Converter
             this.PlaneAngleTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PlaneAngleTextBox.BackColor = System.Drawing.Color.White;
             this.PlaneAngleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlaneAngleTextBox.Location = new System.Drawing.Point(326, 195);
+            this.PlaneAngleTextBox.Location = new System.Drawing.Point(326, 194);
             this.PlaneAngleTextBox.Name = "PlaneAngleTextBox";
             this.PlaneAngleTextBox.Size = new System.Drawing.Size(221, 32);
             this.PlaneAngleTextBox.TabIndex = 17;
@@ -699,7 +714,7 @@ namespace Unique_Converter
             "Minute Of Arc",
             "Radian",
             "Second Of Arc"});
-            this.ToPlaneAngleComboBox.Location = new System.Drawing.Point(506, 125);
+            this.ToPlaneAngleComboBox.Location = new System.Drawing.Point(506, 124);
             this.ToPlaneAngleComboBox.Name = "ToPlaneAngleComboBox";
             this.ToPlaneAngleComboBox.Size = new System.Drawing.Size(186, 34);
             this.ToPlaneAngleComboBox.TabIndex = 16;
@@ -720,24 +735,10 @@ namespace Unique_Converter
             "Minute Of Arc",
             "Radian",
             "Second Of Arc"});
-            this.FromPlaneAngleComboBox.Location = new System.Drawing.Point(183, 125);
+            this.FromPlaneAngleComboBox.Location = new System.Drawing.Point(183, 124);
             this.FromPlaneAngleComboBox.Name = "FromPlaneAngleComboBox";
             this.FromPlaneAngleComboBox.Size = new System.Drawing.Size(186, 34);
             this.FromPlaneAngleComboBox.TabIndex = 15;
-            // 
-            // PlaneAngleConversion
-            // 
-            PlaneAngleConversion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            PlaneAngleConversion.AutoSize = true;
-            PlaneAngleConversion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            PlaneAngleConversion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            PlaneAngleConversion.Font = new System.Drawing.Font("Monotype Corsiva", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            PlaneAngleConversion.ForeColor = System.Drawing.Color.Black;
-            PlaneAngleConversion.Location = new System.Drawing.Point(296, 58);
-            PlaneAngleConversion.Name = "PlaneAngleConversion";
-            PlaneAngleConversion.Size = new System.Drawing.Size(279, 39);
-            PlaneAngleConversion.TabIndex = 14;
-            PlaneAngleConversion.Text = "Plane Angle Converter";
             // 
             // UniqueConverter
             // 
@@ -754,6 +755,7 @@ namespace Unique_Converter
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.TopPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UniqueConverter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unique Converter";

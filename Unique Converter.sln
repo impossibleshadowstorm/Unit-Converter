@@ -5,16 +5,20 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unique Converter", "Unique Converter.csproj", "{D9B31B73-3849-478D-A94C-59B799F8BF84}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "UnitConverterSetup", "..\UnitConverterSetup\UnitConverterSetup.vdproj", "{B2A0E482-2C83-4E4F-B885-591638BC2344}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D9B31B73-3849-478D-A94C-59B799F8BF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9B31B73-3849-478D-A94C-59B799F8BF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B31B73-3849-478D-A94C-59B799F8BF84}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B31B73-3849-478D-A94C-59B799F8BF84}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{D9B31B73-3849-478D-A94C-59B799F8BF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9B31B73-3849-478D-A94C-59B799F8BF84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A0E482-2C83-4E4F-B885-591638BC2344}.Debug|Any CPU.ActiveCfg = Release
+		{B2A0E482-2C83-4E4F-B885-591638BC2344}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
